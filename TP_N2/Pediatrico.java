@@ -37,11 +37,11 @@ public class Pediatrico extends Paciente implements Nutricion {
 
     @Override
     public String getVademecum() {
-        return "Vademécum pediátrico"; // Acá implementamos el método abstracto de Paciente
+        return "Vademécum pediátrico"; // Acá implemento el método abstracto de Paciente
     }
 
     @Override
     public String getDieta() {
-        return "Dieta balanceada infantil"; // y por ultimo Implementamos el método de Nutricion
+        return "Dieta balanceada infantil"; // y por ultimo Implemento el método de Nutricion
     }
 } // cierro la clase

@@ -1,25 +1,39 @@
 package TP_N2;
 
 public class Adulto extends Paciente implements ClinicaMedica {
-    private String presionArterial;
+    private int sistolica;
+    private int diastolica;
     private double altura;
+    private double peso;
 
-    public String getPresionArterial() {
-        return presionArterial;
+    public int getSistolica() {
+        return sistolica;
+    }
+
+    public int getDiastolica() {
+        return diastolica;
     }
 
     public double getAltura() {
         return altura;
     }
-    private double peso;
 
     public double getPeso() {
         return peso;
     }
 
-    public Adulto(String dni, String nombre, String obraSocial, String presionArterial, double altura, double peso) {
+    public Adulto(String dni, String nombre, String obraSocial, int sistolica, int diastolica, double altura, double peso) {
         super(dni, nombre, obraSocial);
-        this.presionArterial = presionArterial;
+
+        if (sistolica < 90 || sistolica > 200) {
+            throw new IllegalArgumentException("Valor de presión sistólica fuera de rango (90–200).");
+        }
+        if (diastolica < 60 || diastolica > 130) {
+            throw new IllegalArgumentException("Valor de presión diastólica fuera de rango (60–130).");
+        }
+
+        this.sistolica = sistolica;
+        this.diastolica = diastolica;
         this.altura = altura;
         this.peso = peso;
     }
